@@ -53,7 +53,15 @@ Copy `unique_connections.csv` and optionally your `config/ip_mapping.csv` to the
 .\scripts\generate_diagram.ps1
 ```
 
-Writes `output/network_diagram.xml`. Open in draw.io via **Extras > Edit Diagram > paste > OK**.
+Writes `output/network_diagram.xml`.
+
+#### Step 3.1 — Open in draw.io
+
+1. Start **draw.io Desktop**
+2. Menu: **Extras → Edit Diagram (XML)**
+3. Paste the contents of `network_diagram.xml` → **OK**
+4. Arrange nodes via drag & drop
+5. Auto-layout: **View → Layout → Auto Layout → Organic**
 
 #### Optional parameters
 
