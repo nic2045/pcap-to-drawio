@@ -1,6 +1,12 @@
-# netconn-diagram
+# pcap-to-drawio
 
-Network connection monitoring and diagram generation using tshark and draw.io.
+> Capture network traffic with tshark, extract unique connections, and visualize them as a color-coded draw.io diagram — in three PowerShell scripts.
+
+[![CI - PowerShell](https://github.com/nic2045/pcap-to-drawio/actions/workflows/ci-powershell.yml/badge.svg)](https://github.com/nic2045/pcap-to-drawio/actions/workflows/ci-powershell.yml)
+[![Latest release](https://img.shields.io/github/v/release/nic2045/pcap-to-drawio?sort=semver)](https://github.com/nic2045/pcap-to-drawio/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PowerShell](https://img.shields.io/badge/powershell-5.1%2B-blue.svg)](scripts/)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/)
 
 ## Prerequisites
 
@@ -87,7 +93,7 @@ Zone colours in the diagram:
 ## Directory structure
 
 ```
-netconn-diagram/
+pcap-to-drawio/
 ├── config/
 │   └── ip_mapping.csv           # IP-to-name/zone mapping (edit this)
 ├── scripts/
