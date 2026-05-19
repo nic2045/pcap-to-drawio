@@ -2,9 +2,9 @@
 pcap/*.pcap
 pcap/*.pcapng
 
-# Generated outputs
-output/unique_connections.csv
-output/network_diagram.xml
+# Generated outputs — ignore everything, keep the directory placeholder
+output/*
+!output/.gitkeep
 
 # Override global gitignore — config CSVs belong in the repo
 !config/*.csv
