@@ -9,6 +9,9 @@ output/*
 # Real IP mapping contains sensitive data — use ip_mapping.csv.example as template
 config/ip_mapping.csv
 
+# Override global gitignore — this workflow file is not a secret
+!.github/workflows/secret-scan.yml
+
 # Windows
 Thumbs.db
 desktop.ini

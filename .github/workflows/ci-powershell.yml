@@ -1,0 +1,45 @@
+name: CI - PowerShell
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/ci-powershell.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/ci-powershell.yml"
+
+jobs:
+  powershell:
+    name: PowerShell (lint)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+          Install-Module -Name PSScriptAnalyzer -Scope CurrentUser -Force
+
+      - name: PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          $settings = @{
+            ExcludeRules = @(
+              'PSAvoidUsingWriteHost',
+              'PSUseBOMForUnicodeEncodedFile'
+            )
+          }
+          $results = Invoke-ScriptAnalyzer -Path ./scripts -Recurse -Settings $settings -Severity @('Error', 'Warning')
+          if ($results) {
+            $results | Format-Table -AutoSize
+            throw "PSScriptAnalyzer found issues."
+          }
+          Write-Host "All checks passed."
