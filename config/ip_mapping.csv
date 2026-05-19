@@ -1,0 +1,9 @@
+ip,name,zone
+192.168.1.10,My Laptop,host
+192.168.1.1,Default Gateway,intern
+192.168.1.20,File Server,intern
+192.168.1.0/24,LAN Segment,intern
+10.0.0.5,Web Proxy,dmz
+10.0.0.0/8,DMZ Network,dmz
+203.0.113.50,External DNS,extern
+198.51.100.0/24,ISP Range,extern
