@@ -6,8 +6,8 @@ pcap/*.pcapng
 output/*
 !output/.gitkeep
 
-# Override global gitignore — config CSVs belong in the repo
-!config/*.csv
+# Real IP mapping contains sensitive data — use ip_mapping.csv.example as template
+config/ip_mapping.csv
 
 # Windows
 Thumbs.db

@@ -62,6 +62,12 @@ Writes `output/network_diagram.xml`. Open in draw.io via **Extras > Edit Diagram
 
 Maps IPs or CIDR ranges to human-readable names and security zones. Edit before running `generate_diagram.ps1`.
 
+`ip_mapping.csv` is gitignored (contains sensitive network data). Copy the example to get started:
+
+```powershell
+Copy-Item config\ip_mapping.csv.example config\ip_mapping.csv
+```
+
 | Column | Description |
 |--------|-------------|
 | `ip`   | Exact IP or CIDR range (e.g. `192.168.1.0/24`) |
